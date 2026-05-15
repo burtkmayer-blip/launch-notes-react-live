@@ -1,0 +1,6 @@
+preview.png
+git-metadata/
+.DS_Store
+node_modules/
+dist/
+.vercel/
