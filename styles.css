@@ -1,0 +1,231 @@
+:root {
+  color: #1f2933;
+  background: #f6f2ea;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.2)),
+    #f6f2ea;
+}
+
+.workspace {
+  width: min(100%, 960px);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.intro,
+.idea-card,
+.progress-panel,
+.task-list,
+.note {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(31, 41, 51, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(31, 41, 51, 0.08);
+}
+
+.intro {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 36px;
+  background:
+    linear-gradient(145deg, rgba(16, 185, 129, 0.12), rgba(14, 165, 233, 0.1)),
+    #ffffff;
+}
+
+.intro-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  margin-bottom: auto;
+  color: #0f766e;
+  background: #dff7ef;
+  border-radius: 8px;
+}
+
+.eyebrow,
+.panel-label {
+  margin: 0 0 8px;
+  color: #5a6b75;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 8ch;
+  margin: 0;
+  color: #172026;
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  line-height: 0.92;
+}
+
+.lede {
+  max-width: 38rem;
+  margin: 24px 0 0;
+  color: #40515c;
+  font-size: 1.08rem;
+}
+
+.idea-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+}
+
+.idea-card label {
+  color: #20303a;
+  font-weight: 800;
+}
+
+.idea-card textarea {
+  width: 100%;
+  resize: vertical;
+  color: #1f2933;
+  background: #fbfaf7;
+  border: 1px solid #cbd5dc;
+  border-radius: 8px;
+  min-height: 148px;
+  padding: 14px;
+  outline: none;
+}
+
+.idea-card textarea:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.14);
+}
+
+.progress-panel {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.progress-panel strong {
+  color: #172026;
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.meter {
+  height: 12px;
+  overflow: hidden;
+  background: #d9e1e5;
+  border-radius: 999px;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #0f766e, #0ea5e9);
+  border-radius: inherit;
+  transition: width 180ms ease;
+}
+
+.task-list {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.task {
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  align-items: center;
+  color: #33434d;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.task svg {
+  width: 21px;
+  height: 21px;
+}
+
+.task:hover,
+.task:focus-visible {
+  border-color: rgba(15, 118, 110, 0.22);
+  background: #f4fbf8;
+  outline: none;
+}
+
+.task.is-done {
+  color: #0f766e;
+  font-weight: 750;
+}
+
+.note {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  color: #33434d;
+}
+
+.note svg {
+  flex: 0 0 auto;
+  color: #c2410c;
+}
+
+.note p {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 18px;
+    place-items: start center;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    min-height: 310px;
+    padding: 28px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
